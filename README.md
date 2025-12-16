@@ -7,9 +7,10 @@ Afterwards you can run the app with `node index`, but it's recommended to instal
 
 You can test the endpoints by using for example postman and having the post data in x-www-form-url-encoded. And access the webserver on https://localhost:3000/. It's also easy to add the authentication header under headers.
 
+Tested in node v22.4
 # What is the case?
 - Add a small conversation module between influencers and companies.
-It's certain that there will only be sent messages between the parties, so only influencer -> company or company -> influencer.
+It should only support messages between the parties, so only influencer -> company or company -> influencer.
 
 *influencer -> influencer or company -> company does not need to be possible.*
 
@@ -20,7 +21,7 @@ Create the database table that supports the messages, and use it.
 
 *Tips*
 - Consider implementing the messages as a decorator just like the userDecorator.
-- The database can be manipulated in the db.js file, and will be changed by deleting main.db and restarting application.
+- The database can be manipulated in the db.ts file, and will be changed by deleting main.db and restarting application.
 - Since messages are only between the parties you don't need both senderType and receiverType, you can manage with just receiverType and easier WHERE sstatements
 - Try to use JOIN's in one of the endpoints to get relevant names.
 
