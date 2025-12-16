@@ -1,6 +1,6 @@
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('./database/main.db');
-const query = (sql, params) => new Promise(async res => {
+const query = (sql, params) => new Promise(res => {
     db.prepare(sql).all(params, (err, rows) => {
         if (err) {
             console.log(err);
